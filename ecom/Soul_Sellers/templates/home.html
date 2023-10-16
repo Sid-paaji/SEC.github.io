@@ -6,7 +6,7 @@
 <body>
     <header>
         <h1>Welcome to Soul Sellers</h1>
-        <p>Your source for stylish and comfortable shoes.</p>
+        <p>Your soul Our soles.</p>
         <nav>
             <ul>
                 <!-- Check if the user is authenticated -->
@@ -29,7 +29,7 @@
                 <li>
                     <h3>{{ shoe.name }}</h3>
                     <p>{{ shoe.description }}</p>
-                    <p>Price: ${{ shoe.price }}</p>
+                    <p>Price: ₹{{ shoe.price }}</p>
                     <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}" width="150">
                 </li>
             {% endfor %}

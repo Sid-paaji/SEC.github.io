@@ -1,0 +1,10 @@
+<h1>Your Shopping Cart</h1>
+<ul>
+    {% if cart %}
+        {% for item in cart.items.all %}
+            <li>{{ item.name }} - ${{ item.price }}</li>
+        {% endfor %}
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+</ul>

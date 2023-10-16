@@ -1,0 +1,6 @@
+<h1>Available Shoes</h1>
+<ul>
+    {% for shoe in shoes %}
+        <li>{{ shoe.name }} - ${{ shoe.price }}</li>
+    {% endfor %}
+</ul>
