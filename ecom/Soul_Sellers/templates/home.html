@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Soul Sellers</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Soul Sellers</h1>
+        <p>Your source for stylish and comfortable shoes.</p>
+        <nav>
+            <ul>
+                <!-- Check if the user is authenticated -->
+                {% if user.is_authenticated %}
+                    <li><h3>Welcome {{user.username}}</h3></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Featured Shoes</h2>
+        <ul>
+            {% for shoe in shoes %}
+                <li>
+                    <h3>{{ shoe.name }}</h3>
+                    <p>{{ shoe.description }}</p>
+                    <p>Price: ${{ shoe.price }}</p>
+                    <img src="{{ shoe.image.url }}" alt="{{ shoe.name }}" width="150">
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>New Arrivals</h2>
+        <!-- Display new arrival shoes here -->
+    </section>
+</body>
+</html>
