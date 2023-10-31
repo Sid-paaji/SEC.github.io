@@ -7,7 +7,7 @@ def homepage(request):
     shoes = Shoe.objects.all()
     return render(request, 'home.html',{'shoes':shoes})
 def shoe_list(request):
-    shoes = Shoe.objgiects.all()
+    shoes = Shoe.objects.all()
     return render(request, 'shoes/shoe_list.html', {'shoes': shoes})
 def view_cart(request):
     user = request.user  # Assuming you're using Django's built-in authentication
