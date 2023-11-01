@@ -1,17 +1,7 @@
 from django.db import models
-class User(models.Model):
-    username=models.CharField(max_length=15,unique=True,null=False)
-    f_name=models.CharField(max_length=20)
-    l_name=models.CharField(max_length=20)
-    email=models.EmailField(unique=True,null=False)
-    password=models.CharField(max_length=20,null=False)
-    def __str__(self):
-        return self.username
-
-
+from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length=50)
-
     def __str__(self):
         return self.name
 
